@@ -58,7 +58,7 @@ const App = () => {
       <br />
       <br />
 
-      <span>{timer ? formatTimer(timer) : 'hh:mm:ss:'}</span>
+      <span>{timer ? formatTimer(timer) : 'hh:mm:ss'}</span>
     </>
   );
 };
