@@ -26,7 +26,7 @@ const formatTimer = (time) => {
     hour = '0' + hour;
   }
 
-  fullTime = hour + ':' + minute + ':' + second;
+  fullTime = hour + ' час ' + ' : ' + minute + ' минут ' + ' : ' + second + ' секунд ';
 
   return fullTime;
 };
@@ -49,11 +49,18 @@ const App = () => {
     }
   }, [timer]);
 
+  const handlerClick = (number) => {
+    if (number > 0 && Number.isInteger(Number(number))) {
+      setTimer(number);
+    } else {
+      alert('Время должно быть больше 0 или целое число');
+    }
+  };
   return (
     <>
       <input placeholder='Seconds' type='text' ref={inputRef} />
 
-      <button onClick={() => setTimer(inputRef.current.value)}>Start</button>
+      <button onClick={() => handlerClick(inputRef.current.value)}>Start</button>
 
       <br />
       <br />
